@@ -13,7 +13,8 @@ pipeline {
             steps {
                 timeout(time: 5, unit: 'SECONDS') {
                     retry(3) {
-                        sh ./deploy_me.sh
+                        sh 'chmod +x -R ${env.WORKSPACE}'
+                        sh './deploy_me.sh'
                     }
                 }
             }
