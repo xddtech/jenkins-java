@@ -4,6 +4,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                sh 'echo "Hello Jenkins Java"'
+                sh 'hostname'
                 sh 'mvn --version'
             }
         }
