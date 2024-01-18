@@ -13,7 +13,7 @@ pipeline {
             steps {
                 timeout(time: 5, unit: 'SECONDS') {
                     retry(3) {
-                        sh 'chmod +x -R ${env.WORKSPACE}'
+                        sh 'sudo chmod -R 777 ./deploy_me.sh'
                         sh './deploy_me.sh'
                     }
                 }
