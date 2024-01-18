@@ -26,7 +26,8 @@ pipeline {
     }
     post {
         always {
-            echo 'post - this will always run ---------------------------------------- '
+            echo 'post - this will always run, all envs ---------------------------------------- '
+            echo 'printenv'
         }
         success {
             echo 'post - successful'
