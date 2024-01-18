@@ -1,10 +1,14 @@
 /* Requires the Docker Pipeline plugin */
 pipeline {
     agent { docker { image 'maven:3.9.6-eclipse-temurin-17-alpine' } }
+    enviroment {
+        SYSTEM_LEVEL = 'mytest'
+    }
+    
     stages {
         stage('build') {
             steps {
-                sh 'echo "Hello Jenkins Java"'
+                sh 'echo "Hello Jenkins Java: ${SYSTEM_LEVEL}"'
                 sh 'hostname'
                 sh 'mvn --version'
             }
