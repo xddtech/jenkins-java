@@ -9,6 +9,15 @@ pipeline {
                 sh 'mvn --version'
             }
         }
+        stage('deploy') {
+            steps {
+                timeout(time: 5, unit: 'SECONDS') {
+                    retry(3) {
+                        sh './deploy_me.sh'
+                    }
+                }
+            }
+        }
     }
 }
 
