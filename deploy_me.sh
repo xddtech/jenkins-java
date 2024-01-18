@@ -1,1 +1,1 @@
-echo 'run deploy me .......'
+echo 'run deploy me on ${SYSTEM_LEVEL} .......'
