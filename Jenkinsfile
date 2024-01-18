@@ -22,7 +22,7 @@ pipeline {
     }
     post {
         always {
-            echo 'post - this will always run'
+            echo 'post - this will always run ---------------------------------------- '
         }
         success {
             echo 'post - successful'
@@ -31,11 +31,10 @@ pipeline {
             echo 'post - failed'
         }
         unstable {
-            echo 'post - This will run only if the run was marked as unstable'
+            echo 'post - run only if the run was marked as unstable'
         }
         changed {
-            echo 'post - This will run only if the state of the Pipeline has changed'
-            echo 'post - For example, if the Pipeline was previously failing but is now successful'
+            echo 'post - run only if the state of the Pipeline has changed'
         }
     }
 }
