@@ -18,7 +18,12 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                timeout(time: 5, unit: 'SECONDS') {
+                    retry(3) {
+                        sh 'chmod -R 777 ./deploy_me.sh'
+                        sh './deploy_me.sh'
+                    }
+                }
             }
         }
     }
