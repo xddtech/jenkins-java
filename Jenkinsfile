@@ -27,13 +27,13 @@ pipeline {
     post {
         always {
             echo 'post - this will always run, all envs ---------------------------------------- '
-            sh 'printenv'
+            sh 'set'
         }
         success {
-            echo 'post - successful'
+            echo 'post - pipeline successful'
         }
         failure {
-            echo 'post - failed'
+            echo 'post - pipline failed'
         }
         unstable {
             echo 'post - run only if the run was marked as unstable'
