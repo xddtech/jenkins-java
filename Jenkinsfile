@@ -19,7 +19,7 @@ pipeline {
                     junit 'target/surefire-reports/*.xml'
                 }
                 success {
-                    // publish html
+                    sh 'echo "publish html ............."'
                     //publishHTML target: [
                     //    allowMissing: false,
                     //    alwaysLinkToLastBuild: false,
@@ -27,7 +27,7 @@ pipeline {
                     //    reportDir: 'coverage',
                     //    reportFiles: 'index.html',
                     //    reportName: 'XDD Covver Report'
-                   //]
+                    //]
                 }
             }
         }
