@@ -20,14 +20,14 @@ pipeline {
                 }
                 success {
                     // publish html
-                    publishHTML target: [
-                        allowMissing: false,
-                        alwaysLinkToLastBuild: false,
-                        keepAll: true,
-                        reportDir: 'coverage',
-                        reportFiles: 'index.html',
-                        reportName: 'XDD Covver Report'
-                   ]
+                    //publishHTML target: [
+                    //    allowMissing: false,
+                    //    alwaysLinkToLastBuild: false,
+                    //    keepAll: true,
+                    //    reportDir: 'coverage',
+                    //    reportFiles: 'index.html',
+                    //    reportName: 'XDD Covver Report'
+                   //]
                 }
             }
         }
