@@ -2,6 +2,7 @@ pipeline {
     agent any
     options {
         skipStagesAfterUnstable()
+        buildDiscarder(logRotator(numToKeepStr:'5'))
     }
     stages {
         stage('Build') { 
@@ -16,6 +17,17 @@ pipeline {
             post {
                 always {
                     junit 'target/surefire-reports/*.xml'
+                }
+                success {
+                    // publish html
+                    publishHTML target: [
+                        allowMissing: false,
+                        alwaysLinkToLastBuild: false,
+                        keepAll: true,
+                        reportDir: 'coverage',
+                        reportFiles: 'index.html',
+                        reportName: 'XDD Covver Report'
+                   ]
                 }
             }
         }
